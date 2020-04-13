@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
     "angular2-moment": "^1.9.0",
-    "bootstrap": "3.3.6",
+    "bootstrap": "3.4.1",
     "jquery": "1.12",
     "ngx-autosize": "^1.7.5",
     "ngx-material-file-input": "^2.1.1",
