@@ -1,0 +1,44 @@
+<div class="main-content">
+	<h1>{{message}}</h1>
+	<mat-list>
+<div class="paginator">
+	<button mat-button *ngIf="page>1" [routerLink]="['/following',user_id,pre_page]"><mat-icon>navigate_before</mat-icon> Anterior</button>
+	<button mat-button *ngIf="page!=pages" [routerLink]="['/following',user_id,next_page]">Siguiente<mat-icon>navigate_next</mat-icon></button>
+
+	
+
+</div>
+
+  <mat-list-item *ngFor="let user of users">
+    <img *ngIf="user.followed.image" matListAvatar src="{{url+'get-image-user/'+user.followed.image}}" alt="{{user.nick}}">
+    <img *ngIf="!user.followed.image" matListAvatar src="{{url+'get-image-user/default-profile.jpg'}}" alt="{{user.nick}}">
+    <h3 matLine [routerLink]="['/profile',user.followed._id]"> {{user.followed.name}} </h3>
+    <p matLine>
+      <span> {{user.followed.surname}} </span>
+      <span class="demo-2"> -- {{user.followed.nick}} </span>
+    </p>
+    <div class="follow" *ngIf="identity._id != user._id">
+    	<span *ngIf="follows.indexOf(user.followed._id)<0">
+    	<button mat-button (click)="followUser(user.followed._id)" >
+    		<mat-icon>person_add</mat-icon>Seguir
+    	</button>
+    	</span>
+    	<span *ngIf="follows.indexOf(user.followed._id)>=0" (mouseenter)="mouseEnter(user.followed._id)"        (mouseleave)="mouseLeave(user.followed._id)">
+	    	<button mat-button *ngIf="user.followed._id == followUserOver;else following" (click)="deleteFollow(user.followed._id)">
+	    		<mat-icon>remove_circle</mat-icon>Dejar de seguir
+	    	</button>
+
+    		<ng-template #following>
+    			<button mat-button>
+    				<mat-icon>how_to_reg</mat-icon>Siguiendo
+    			</button>
+    		</ng-template>
+    	</span>
+    </div>
+  </mat-list-item>
+</mat-list>
+<div class="paginator">
+	<button mat-button *ngIf="page>1" [routerLink]="['/following',user_id,pre_page]"><mat-icon>navigate_before</mat-icon> Anterior</button>
+	<button mat-button *ngIf="page!=pages" [routerLink]="['/following',user_id,next_page]">Siguiente<mat-icon>navigate_next</mat-icon></button>
+</div>
+</div>

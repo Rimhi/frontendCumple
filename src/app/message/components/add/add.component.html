@@ -1,0 +1,26 @@
+<div>
+	<form #formAdd="ngForm" style="margin-left: 20%;">
+		<label>Para:</label>
+		<select *ngIf="follows" name="receiver" #receiver [(ngModel)]="message.receiver" required>
+			<option *ngFor="let follow of follows" value="{{follow.user._id}}">{{follow.user.name+" "+follow.user.surname+" ("+follow.user.nick+") "}}</option>
+		</select>
+ 
+		<mat-form-field appearance="fill" class="example-full-width" id="message">
+		    	<mat-label>...</mat-label>
+		    	<div id="contact-form" >
+		    	<textarea  matInput name="text" #text="ngModel" [(ngModel)]="message.text" autosize>
+		    	</textarea>
+		    		</div>
+		    	<div class="image-upload">
+				  <label for="file-input">
+				    <mat-icon>add_photo_alternate</mat-icon>
+				    <button mat-button (click)="onSubmit(formAdd)">Enviar</button>
+				  </label>
+
+				 <input type="file"  name="file"  id="file-input" >
+				</div>
+	  		</mat-form-field>
+	  		
+	  		
+	</form>
+</div>

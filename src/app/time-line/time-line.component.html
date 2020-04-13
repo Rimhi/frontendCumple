@@ -1,0 +1,30 @@
+<div>
+	<span class="refresh"><mat-icon (click)="refresh()">refresh</mat-icon></span>
+	<mat-card *ngFor="let publication of publications">
+		<mat-card-header>
+			<mat-icon class="mas" [matMenuTriggerFor]="afterMenu">expand_more</mat-icon>
+			<mat-card-title>{{publication.user.name+" "+publication.user.surname}}</mat-card-title>
+			<mat-card-subtitle>@{{publication.user.nick+"   ---   "}}<span>{{(publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo}}</span></mat-card-subtitle>
+			<img *ngIf="!publication.user.image" src="{{url+'get-image-user/default-profile.jpg'}}" mat-card-avatar >
+        	<img *ngIf="publication.user.image" src="{{url+'get-image-user/'+publication.user.image}}" mat-card-avatar >
+		</mat-card-header>
+		<mat-card-content>
+			<p class="texto">{{publication.text}}</p>
+		</mat-card-content>
+		<div *ngIf="publication.file">
+		<mat-grid-list cols="1" rowHeight="1:1">
+		  <mat-grid-tile><img src="{{url+'get-image-publication/'+publication.file}}"></mat-grid-tile>
+		</mat-grid-list>
+		</div>
+		<mat-card-actions>
+		<span class="like"><mat-icon>mood</mat-icon></span><span class="number-like">1</span>	<span  class="dislike"><mat-icon>mood_bad</mat-icon></span><span class="number-dislike">2</span>
+		<span class="comment"><mat-icon> add_comment</mat-icon></span><span class="number-comment">5</span>
+		</mat-card-actions>
+		<mat-menu #afterMenu="matMenu" xPosition="after">
+		  <button mat-menu-item><mat-icon>thumb_down_alt</mat-icon>Denunciar</button>
+		  <button mat-menu-item *ngIf="identity._id==publication.user._id" (click)="deletePublication(publication._id)"><mat-icon>delete_forever</mat-icon>Eliminar</button>
+		</mat-menu>
+	</mat-card>
+	<div><button mat-button class="vermas" (click)="viewMore()" *ngIf="nomore">Ver mas</button></div>
+</div>
+

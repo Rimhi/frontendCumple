@@ -1,0 +1,17 @@
+.example-full-width {
+  width: 100%;
+}
+.image-upload>input {
+  display: none;
+}
+.form-publication{
+	padding: 10px;
+
+}
+.form-publication{
+	margin-top: 10px !important;
+}
+button{
+	display: inline;
+	float: left;
+}

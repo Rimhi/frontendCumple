@@ -1,0 +1,30 @@
+.texto{
+	margin-left: 57px;
+	margin-top: -15px;
+}
+.mas{
+	float: right;
+    margin-left: 184px;
+}
+.like, .dislike,.comment{
+	margin-left: 40px;
+	font-size: 24px;
+}
+.number-like,.number-dislike,.number-comment{
+	margin-left: 10px;
+	font-size: 20px;
+}
+.number-like,.number-dislike,.like, .dislike,.numer-comment,.comment{
+	margin-bottom: -20px;
+}
+mat-card-actions{
+	padding: 0px;
+	margin: 0px;
+}
+.vermas{
+	width: 100%;
+	height: 70px;
+} 
+.refresh{
+	margin-left: 95%;
+}

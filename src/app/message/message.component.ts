@@ -1,9 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { routing,appRoutingProviders } from './app.routing';
+import  { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+
+
+//rutas
+import { MessageRoutingModule } from './message-routing.component';
+
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -41,46 +45,26 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
-import {AutosizeModule} from 'ngx-autosize';
-import { MomentModule } from 'angular2-moment';
 
 
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
-import { UserComponent } from './user/user.component';
-import { PublicationComponent } from './publication/publication.component';
-import { TimeLineComponent } from './time-line/time-line.component';
-import { ProfileComponent } from './profile/profile.component';
-import { FollowingComponent } from './following/following.component';
-import { FollowedComponent } from './followed/followed.component';
-
-//module mensajes
-
-import { MessageModule } from './message/message.component';
+import { MainComponent } from './components/main/main.component';
+import { AddComponent } from './components/add/add.component';
+import { ReceivedComponent } from './components/received/received.component';
+import { SendedComponent } from './components/sended/sended.component';
 
 
-    
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    HomeComponent,
-    UserEditComponent,
-    UserComponent,
-    PublicationComponent,
-    TimeLineComponent,
-    ProfileComponent,
-    FollowingComponent,
-    FollowedComponent
-  ],
-  imports: [
-    BrowserModule,
-    routing,
-    MessageModule,
-    BrowserAnimationsModule,
+	declarations:[
+		MainComponent,
+		AddComponent,
+		ReceivedComponent,
+		SendedComponent
+	],
+	imports:[
+		CommonModule,
+		FormsModule,
+		MessageRoutingModule,
+		BrowserAnimationsModule,
     MatToolbarModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -117,16 +101,16 @@ import { MessageModule } from './message/message.component';
     MatTooltipModule,
     MatTreeModule,
     FlexLayoutModule,
-    FormsModule,
-    HttpClientModule,
-    MaterialFileInputModule,
-    AutosizeModule,
-    MomentModule
-   
-  ],
-  providers: [
-  appRoutingProviders
-  ],
-  bootstrap: [AppComponent]
+    MaterialFileInputModule
+	],
+	exports:[
+		MainComponent,
+		AddComponent,
+		ReceivedComponent,
+		SendedComponent
+	],
+	providers:[
+	]
+
 })
-export class AppModule { }
+export class MessageModule{}

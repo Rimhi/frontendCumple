@@ -1,0 +1,21 @@
+<div class="form">
+	<p>{{message}}</p>
+	<form #newPublication="ngForm">
+	
+			<mat-form-field appearance="fill" class="example-full-width" id="message">
+		    	<mat-label>¿Que sucede hoy?</mat-label>
+		    	<div id="contact-form" >
+		    	<textarea  matInput name="text" #text="ngModel" [(ngModel)]="publication.text" autosize [minRows]="2" [maxRows]="150">
+		    	</textarea>
+		    		</div>
+		    	<div class="image-upload">
+				  <label for="file-input">
+				    <mat-icon>add_photo_alternate</mat-icon><button mat-button (click)="onSubmit(newPublication);sendPublication($event)" style="float: right;" >Publicar</button>
+				  </label>
+
+				 <input type="file"  name="file" #file="ngModel" [(ngModel)]="publication.file" id="file-input" (change)="fileChageEvent($event)">
+				</div>
+	  		</mat-form-field>
+	  		
+	</form>
+</div>

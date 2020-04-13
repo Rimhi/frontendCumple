@@ -1,0 +1,39 @@
+<div class="example-form">
+	
+	<h1 class="h1-strong ">{{title}}</h1>
+	<p>
+		<span class="example-full-width">{{message}}</span>
+		<mat-progress-bar mode="indeterminate" *ngIf="status" style="margin:30px;"></mat-progress-bar>
+	</p>
+	<form  #loginForm="ngForm" (ngSubimt)="onSubmit(loginForm)" class="" >
+	  	<p>
+	  	<mat-form-field appearance="fill" class="example-full-width">
+	    <mat-label>Enter your email</mat-label>
+		    <input matInput placeholder="Ejemplo prueba@prueba.com" value="" name="email" #email="ngModel" [(ngModel)]="user.email" required  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+		    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  		</mat-form-field>
+	  	</p>
+	  	<p>
+	  	<span *ngIf="!email.valid && email.touched" class="example-full-width">
+	  		El Email es Obligatorio
+	  	</span>
+	  	</p>
+	  	<p>
+		  <mat-form-field appearance="fill"  class="example-full-width">
+		    <mat-label>Escribe tu contraseña</mat-label>
+		    <input matInput [type]="hide ? 'password' : 'text'" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+		    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+		    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+		    </button>
+		  </mat-form-field>
+	  	</p>
+	  	<p>
+	  	<span *ngIf="!password.valid && password.touched" class="example-full-width">
+	  		El nombre es Obligatorio
+	  	</span>
+	  	</p>
+	  	<button mat-button	color="primary" class="example-full-width"  [disabled]="!loginForm.form.valid" (click)="onSubmit(loginForm)">Enviar</button>
+
+	</form>
+</div>
+ 

@@ -1,0 +1,29 @@
+.example-form {
+  min-width: 30%;
+  max-width: 500px;
+  width: 100%;
+  font-size: 70%;
+  height: 40px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.h1-strong{
+	margin-top: 50px;
+	font-weight: bold;
+	margin-left: 13px;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+
+}
+p .example-full-width{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 10px;
+
+}
+.example-form .alerta-p{
+	margin: 0px !important;
+	padding: 0px !important;
+}

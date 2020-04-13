@@ -1,0 +1,112 @@
+.profile{
+	
+	border:solid 5px  #ccc;
+	margin-top: -80px;
+	margin-left: 10px;
+	border-radius: 	100%;
+	display: block;
+	width: 128px;
+	height: 128px;
+
+	
+}
+.edit-image{
+	float: right;
+	padding: 20px;
+}
+.portada{
+	background: orange;
+	width: 100%;
+	height: 250px;
+	max-height: 250px;
+}
+.portada img{
+	width: 100%;
+	max-height: 200px;
+}
+.perfil{
+	max-width: 200px;
+}
+.edit-profile{
+	margin-left: 45px;
+    padding: 20px;
+    margin-top: -60px;
+    display: block;
+}
+.nickname{
+	margin-top: -10px;
+}
+.follow{
+	display: block;
+	float: right;
+	margin-top: -116px;
+}
+.followed{
+	background: gray;
+	margin-left: 160px;
+	display: block;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+.followed p{
+	font-size: 10px;
+	text-decoration-color: #fff;
+	margin-left: 2px;
+}
+.following .label-stats, .following .number-stats{
+  display: block;
+  text-align: center;
+}
+.following{
+  float: left;
+  padding-right: 12px;
+  padding-left:12px;
+  border-right: 2px solid #ccc;
+
+
+}
+.label-stats{
+  font-weight: bold;
+  color: #555;
+}
+a{
+  text-decoration: none;
+}
+
+.following:last-child{
+ 
+  border-right: none;
+}
+.publication{
+	width: 100%;
+}
+.texto{
+	margin-left: 57px;
+	margin-top: -15px;
+}
+.mas{
+	float: right;
+    margin-left: 184px;
+}
+.like, .dislike,.comment{
+	margin-left: 40px;
+	font-size: 24px;
+}
+.number-like,.number-dislike,.number-comment{
+	margin-left: 10px;
+	font-size: 20px;
+}
+.number-like,.number-dislike,.like, .dislike,.numer-comment,.comment{
+	margin-bottom: -20px;
+}
+mat-card-actions{
+	padding: 0px;
+	margin: 0px;
+}
+.vermas{
+	width: 100%;
+	height: 70px;
+} 
+.refresh{
+	margin-left: 95%;
+}
