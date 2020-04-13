@@ -35,7 +35,7 @@ export class AddComponent implements OnInit{
 		this.identity = this._userService.getIdentity();
 		this.token = this._userService.getToken();
 		this.url = GLOBAL.url;
-		this.message = new Message("","","",this.identity._id,"","");
+		this.message = new Message("","","","",this.identity._id,"","");
 	}
 	ngOnInit(){
 		this.getMyFollows();

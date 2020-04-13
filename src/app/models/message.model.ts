@@ -6,6 +6,6 @@ export class Message{
 		public emiter: string,
 		public receiver: string,
 		public viewed: string,
-		public chat:string
+		public chat: string,
 	){}
 }
